@@ -39,6 +39,7 @@ function resizeYesButton() {
 
   yesButton.style.fontSize = `${newFontSize}px`;
 }
+
 function generateMessage(noCount) {
   const messages = [
     "Không Bao Giờ",
@@ -46,8 +47,9 @@ function generateMessage(noCount) {
     "Mong bé tha lỗi choo anhh :((",
     "Anhh saii rồi ạ",
     "Bé đừng giận anhh nữa nhoo",
-    "Anhhh xin lỗilỗi bé nhắm nhunnn đóoooo",
+    "Anhhh xin lỗi bé nhắm nhunnn đóoooo",
   ];
+
   const messageIndex = Math.min(noCount, messages.length - 1);
   return messages[messageIndex];
 }
@@ -59,73 +61,3 @@ function changeImage(image) {
 function updateNoButtonText() {
   noButton.innerHTML = generateMessage(noCount);
 }
-{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Protest Riot', sans-serif;
-  background: linear-gradient(135deg, #f5b5fc, #ffe6e6);
-}
-
-.container {
-  text-align: center;
-}
-
-.cat-img {
-  width: 300px;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
-}
-
-.title {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.title span {
-  font-size: 18px;
-  display: block;
-  margin-top: 10px;
-}
-
-.buttons button {
-  padding: 10px 20px;
-  margin: 10px;
-  font-size: 18px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-#yesBtn {
-  background-color: #ff7eb9;
-  color: white;
-}
-
-#noBtn {
-  background-color: #ccc;
-  color: black;
-  position: absolute;
-}
-const noBtn = document.getElementById('noBtn');
-const yesBtn = document.getElementById('yesBtn');
-
-noBtn.addEventListener('mouseover', () => {
-  const x = Math.floor(Math.random() * (window.innerWidth - noBtn.offsetWidth));
-  const y = Math.floor(Math.random() * (window.innerHeight - noBtn.offsetHeight));
-  noBtn.style.left = `${x}px`;
-  noBtn.style.top = `${y}px`;
-});
-
-yesBtn.addEventListener('click', () => {
-  alert('xin lỗi bé nhìu lắm á hihi!');
-});
